@@ -1,12 +1,12 @@
 import './App.css'
-import Header from './components/header/Header'
-import Home from './pages/Home'
-import Footer from './components/footer/Footer'
-import FAQPage from './pages/FAQpage'
+import Header from "./components/header/Header"
+import Home from "./pages/Home"
+import Footer from "./components/footer/Footer"
+import FAQPage from "./pages/FAQPage"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Product from './pages/Product'
-import Cart from './pages/Cart'
-import Item from './pages/Item'
+import Product from "./pages/Product"
+import Cart from "./pages/Cart"
+import Item from "./pages/Item"
 
 function App() {
 
