@@ -33,7 +33,7 @@ export const handlePayment = async (totalPrice) => {
 
         // Open Razorpay Checkout
         const options = {
-            key: "rzp_test_dDEXlUShpYvVFe", // Replace with your Razorpay test key
+            key: "YOUR_KEY", // Replace with your Razorpay test key
             amount: data.amount,
             currency: data.currency,
             name: "CartCraze",
