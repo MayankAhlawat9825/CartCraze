@@ -26,7 +26,7 @@ export const handlePayment = async (totalPrice) => {
         const amountInPaisa = totalPrice ; // Convert to paisa
 
         // Call backend API to create an order
-        const { data } = await axios.post("/api/create-order", {
+        const { data } = await axios.post("https://cart-craze-server.vercel.app/api/create-order", {
             amount: amountInPaisa,
             currency: "INR"
         });
