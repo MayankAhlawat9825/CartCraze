@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const BACKEND_URL = "http://localhost:3000"; // Replace with your deployed backend URL
+
 export const loadRazorpayScript = () => {
     return new Promise((resolve) => {
         if (window.Razorpay) {
@@ -17,28 +19,29 @@ export const loadRazorpayScript = () => {
 
 export const handlePayment = async (totalPrice) => {
     const isScriptLoaded = await loadRazorpayScript();
-    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY;
     if (!isScriptLoaded) {
         alert("Failed to load Razorpay. Check your internet connection.");
         return;
     }
+    
     try {
-        const amountInPaisa = totalPrice ; // Convert to paisa
+        // ✅ Fetch the Razorpay key from backend
+        const { data: { key } } = await axios.get(`${BACKEND_URL}/api/get-razorpay-key`);
 
-        // Call backend API to create an order
-        const { data } = await axios.post("/api/create-order", {
-            amount: amountInPaisa,
+        // ✅ Create an order from the backend
+        const { data: order } = await axios.post(`${BACKEND_URL}/api/create-order`, {
+            amount: totalPrice, // Convert to paisa
             currency: "INR"
         });
 
-        // Open Razorpay Checkout
+        // ✅ Open Razorpay Checkout
         const options = {
-            key: razorpayKey, // Replace with your Razorpay test key
-            amount: data.amount,
-            currency: data.currency,
+            key: key, // ✅ Get the key dynamically from backend
+            amount: order.amount,
+            currency: order.currency,
             name: "CartCraze",
             description: "Test Transaction",
-            order_id: data.id, // Order ID from backend
+            order_id: order.id, // ✅ Order ID from backend
             handler: function (response) {
                 alert("Payment Successful!");
                 console.log(response);

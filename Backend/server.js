@@ -38,12 +38,18 @@ app.post('/api/create-order', async (req, res) => {
     }
 });
 
+app.get("/api/get-razorpay-key", (req, res) => {
+    res.status(200).json({ key: process.env.RAZORPAY_KEY_ID });
+});
+
+
 app.get('/',(req,res) =>(
     res.send("Server is ready")
 ));
 // Get absolute path of the Images folder
 const __dirname = path.resolve();
-app.use('/api/Images', express.static(path.join(__dirname, 'Images')));
+app.use('/api/Images', express.static(path.join(__dirname, 'public/Images')));
+
 
 //Get the list of categories and it data
 
