@@ -8,8 +8,15 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "server.js"
+    },
+    {
+      "src": "/Images/(.*)",
+      "dest": "/public/Images/$1"
     }
-  ]
+  ],
+  "static": {
+    "directory": "public"
+  }
 }
