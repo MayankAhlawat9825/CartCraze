@@ -1,10 +1,10 @@
 import axios from "axios";
 
+const BASE_URL = "https://cart-craze-server.vercel.app/api"; // Deployed backend URL
 
-// Fetch everything in one go
 export const fetchData = async () => {
     try {
-        const response = await axios.get("/api/category");
+        const response = await axios.get(`${BASE_URL}/category`);
         console.log(response.data);
         
         return response.data; // Returns an object with multiple datasets
@@ -13,4 +13,3 @@ export const fetchData = async () => {
         throw error;
     }
 };
-
