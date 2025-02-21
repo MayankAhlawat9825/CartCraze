@@ -1,4 +1,3 @@
-```markdown
 # 🛍️ Full-Stack E-Commerce Application
 
 An **end-to-end e-commerce platform** built using **React.js (Frontend)** and **Express.js (Backend)**, integrated with **Razorpay Payment Gateway** for a seamless shopping experience.
@@ -12,15 +11,13 @@ An **end-to-end e-commerce platform** built using **React.js (Frontend)** and **
 ✔️ Product Listing & Detailed View  
 ✔️ Add, Remove, and Update Cart Items  
 ✔️ Razorpay Secure Checkout Integration  
-✔️ Real-time Price Calculation (Tax, Discounts, Shipping)
+✔️ Real-time Price Calculation (Tax, Discounts, Shipping)  
 
 ### 🛠️ **Backend (Express.js + Node.js)**
 ✔️ REST API for Product & Category Data  
 ✔️ Razorpay Payment Processing  
 ✔️ Image Handling & Static File Serving  
 ✔️ Secure & Scalable Architecture  
-
-
 
 ## 🛠️ Installation & Setup
 
@@ -92,4 +89,5 @@ npm run dev
 Your **e-commerce application** is now set up! 🎉  
 Feel free to contribute, customize, and make it even better!  
 
-💡 **Happy Coding!** 💡  
+💡 **Happy Coding!** 💡
+
