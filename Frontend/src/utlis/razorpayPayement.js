@@ -17,7 +17,7 @@ export const loadRazorpayScript = () => {
 
 export const handlePayment = async (totalPrice) => {
     const isScriptLoaded = await loadRazorpayScript();
-
+    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY;
     if (!isScriptLoaded) {
         alert("Failed to load Razorpay. Check your internet connection.");
         return;
@@ -33,7 +33,7 @@ export const handlePayment = async (totalPrice) => {
 
         // Open Razorpay Checkout
         const options = {
-            key: "rzp_test_dDEXlUShpYvVFe", // Replace with your Razorpay test key
+            key: razorpayKey, // Replace with your Razorpay test key
             amount: data.amount,
             currency: data.currency,
             name: "CartCraze",
