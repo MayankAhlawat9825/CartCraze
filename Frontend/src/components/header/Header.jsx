@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../../assets/E-commerce-logo.jpg";
+// import logo from "../../assets/E-commerce-Logo.jpg";
 import { fetchData } from "../../api"; // Import your API fetch function
 
 function Header() {
@@ -47,7 +47,7 @@ function Header() {
             <div className='flex justify-between items-center'>
                 {/* Logo */}
                 <div>
-                    <Link to="/"><img src={logo} alt="Logo" className='w-25 h-20' /></Link>
+                    <Link to="/"><img src="/E-commerce-Logo.jpg" alt="Logo"     className='w-25 h-20' /></Link>
                 </div>
                 
                 {/* Navigation */}
