@@ -30,18 +30,18 @@ export const handlePayment = async (totalPrice) => {
 
         // ✅ Create an order from the backend
         const { data: order } = await axios.post(`${BACKEND_URL}/api/create-order`, {
-            amount: totalPrice, // Convert to paisa
+            amount: totalPrice, // ✅ Amount is already converted to paisa
             currency: "INR"
         });
 
         // ✅ Open Razorpay Checkout
         const options = {
-            key: key, // ✅ Get the key dynamically from backend
+            key: key, 
             amount: order.amount,
             currency: order.currency,
             name: "CartCraze",
             description: "Test Transaction",
-            order_id: order.id, // ✅ Order ID from backend
+            order_id: order.id, 
             handler: function (response) {
                 alert("Payment Successful!");
                 console.log(response);

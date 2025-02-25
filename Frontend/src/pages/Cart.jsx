@@ -117,7 +117,7 @@ function Cart() {
                     <span>₹{(totalPrice).toFixed(2)}</span>
                 </div>
                 <div>
-                    <button type="submit" className="text-gray-200" onClick={()=>handlePayment((totalPrice).toFixed(2))}>Buy Now</button>
+                    <button type="submit" className="text-gray-200" onClick={() => handlePayment(Math.round(totalPrice * 100))}>Buy Now</button>
                 </div>
             </div>)}
         </div>
