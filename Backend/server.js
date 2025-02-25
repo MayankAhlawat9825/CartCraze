@@ -4,6 +4,7 @@ import Razorpay from 'razorpay';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
@@ -46,8 +47,10 @@ app.get("/api/get-razorpay-key", (req, res) => {
 app.get('/',(req,res) =>(
     res.send("Server is ready")
 ));
-// Get absolute path of the Images folder
-const __dirname = path.resolve();
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use('/api/Images', express.static(path.join(__dirname, 'public/Images')));
 
 
@@ -66,7 +69,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 2999,
                 "discount": "10",
                 "description": "Lightweight and comfortable running shoes.",
-                "image": "Images/Running-Shoes.jpg",
+                "image": "/api/Images/Running-Shoes.jpg",
                 "rating": {
                     "average": 4.3,
                     "totalReviews": 150
@@ -78,7 +81,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 2499,
                 "discount": "15",
                 "description": "Stylish and trendy casual sneakers.",
-                "image": "Images/Casual-Sneakers.jpg",
+                "image": "/api/Images/Casual-Sneakers.jpg",
                 "rating": {
                     "average": 4.0,
                     "totalReviews": 120
@@ -90,7 +93,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 3999,
                 "discount": "25",
                 "description": "Premium leather shoes for formal occasions.",
-                "image": "Images/Formal-Leather-Shoes.jpg",
+                "image": "/api/Images/Formal-Leather-Shoes.jpg",
                 "rating": {
                     "average": 4.5,
                     "totalReviews": 180
@@ -102,7 +105,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 799,
                 "discount": "5",
                 "description": "Comfortable flip flops for daily use.",
-                "image": "Images/Flip-Flops.jpg",
+                "image": "/api/Images/Flip-Flops.jpg",
                 "rating": {
                     "average": 3.8,
                     "totalReviews": 80
@@ -114,7 +117,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 3499,
                 "discount": "20",
                 "description": "Classic loafers for a smart look.",
-                "image": "Images/Loafers.jpg",
+                "image": "/api/Images/Loafers.jpg",
                 "rating": {
                     "average": 4.2,
                     "totalReviews": 110
@@ -126,7 +129,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1999,
                 "discount": "10",
                 "description": "Durable sports sandals for outdoor activities.",
-                "image": "Images/Sports-Sandals.jpg",
+                "image": "/api/Images/Sports-Sandals.jpg",
                 "rating": {
                     "average": 4.1,
                     "totalReviews": 95
@@ -138,7 +141,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 4599,
                 "discount": "30",
                 "description": "Stylish and rugged high ankle boots.",
-                "image": "Images/High-Ankle-Boots.jpg",
+                "image": "/api/Images/High-Ankle-Boots.jpg",
                 "rating": {
                     "average": 4.6,
                     "totalReviews": 200
@@ -150,7 +153,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1599,
                 "discount": "12",
                 "description": "Casual canvas shoes for everyday wear.",
-                "image": "Images/Canvas-Shoes.jpg",
+                "image": "/api/Images/Canvas-Shoes.jpg",
                 "rating": {
                     "average": 3.9,
                     "totalReviews": 85
@@ -169,7 +172,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 799,
                 "discount": "10",
                 "description": "Comfortable cotton T-shirt.",
-                "image": "Images/Men's-T-shirt.jpg",
+                "image": "/api/Images/Men's-T-shirt.jpg",
                  "rating": {
                     "average": 4.2,
                     "totalReviews": 100
@@ -181,7 +184,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 2499,
                 "discount": "20",
                 "description": "Classic fit denim jeans.",
-                "image": "Images/Denim-Jeans.jpg",
+                "image": "/api/Images/Denim-Jeans.jpg",
                  "rating": {
                     "average": 4.4,
                     "totalReviews": 130
@@ -193,7 +196,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1599,
                 "discount": "15",
                 "description": "Casual shirt with a modern fit.",
-                "image": "Images/Casual-Shirt.jpg",
+                "image": "/api/Images/Casual-Shirt.jpg",
                  "rating": {
                     "average": 4.0,
                     "totalReviews": 90
@@ -205,7 +208,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1999,
                 "discount": "30",
                 "description": "Warm and stylish hoodie.",
-                "image": "Images/Hoodie.jpg",
+                "image": "/api/Images/Hoodie.jpg",
                  "rating": {
                     "average": 4.6,
                     "totalReviews": 160
@@ -217,7 +220,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1799,
                 "discount": "18",
                 "description": "Durable and trendy cargo pants.",
-                "image": "Images/Cargo-Pants.jpg",
+                "image": "/api/Images/Cargo-Pants.jpg",
                 "rating": {
                     "average": 4.1,
                     "totalReviews": 105
@@ -229,7 +232,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1299,
                 "discount": "12",
                 "description": "Soft and warm sweatshirt.",
-                "image": "Images/Round-Neck-Sweatshirt.jpg",
+                "image": "/api/Images/Round-Neck-Sweatshirt.jpg",
                  "rating": {
                     "average": 4.3,
                     "totalReviews": 115
@@ -241,7 +244,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 999,
                 "discount": "10",
                 "description": "Comfortable cotton shorts.",
-                "image": "Images/Casual-Shorts.jpg",
+                "image": "/api/Images/Casual-Shorts.jpg",
                 "rating": {
                     "average": 3.8,
                     "totalReviews": 80
@@ -253,7 +256,7 @@ app.get('/api/category',(req,res) =>{
                 "price": 1799,
                 "discount": "22",
                 "description": "Stylish and comfortable joggers.",
-                "image": "Images/Joggers.jpg",
+                "image": "/api/Images/Joggers.jpg",
                 "rating": {
                     "average": 4.5,
                     "totalReviews": 140
@@ -272,7 +275,7 @@ app.get('/api/category',(req,res) =>{
               "price": 7999,
               "discount": "15",
               "description": "Elegant formal suit.",
-              "image": "Images/Formal-Suit.jpg",
+              "image": "/api/Images/Formal-Suit.jpg",
                "rating": {
                   "average": 4.7,
                   "totalReviews": 200
@@ -284,7 +287,7 @@ app.get('/api/category',(req,res) =>{
               "price": 2499,
               "discount": "20",
               "description": "Premium cotton shirt.",
-              "image": "Images/Cotton-Shirt.jpg",
+              "image": "/api/Images/Cotton-Shirt.jpg",
                "rating": {
                   "average": 4.3,
                   "totalReviews": 110
@@ -296,7 +299,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1999,
               "discount": "10",
               "description": "Classic fit trousers.",
-              "image": "Images/Trousers.jpg",
+              "image": "/api/Images/Trousers.jpg",
                "rating": {
                   "average": 4.1,
                   "totalReviews": 95
@@ -308,7 +311,7 @@ app.get('/api/category',(req,res) =>{
               "price": 5999,
               "discount": "25",
               "description": "Stylish blazer.",
-              "image": "Images/Blazer.jpg",
+              "image": "/api/Images/Blazer.jpg",
                "rating": {
                   "average": 4.5,
                   "totalReviews": 140
@@ -320,7 +323,7 @@ app.get('/api/category',(req,res) =>{
               "price": 999,
               "discount": "12",
               "description": "Classic tie set.",
-              "image": "Images/Tie-Set.jpg",
+              "image": "/api/Images/Tie-Set.jpg",
               "rating": {
                   "average": 4.0,
                   "totalReviews": 85
@@ -332,7 +335,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1499,
               "discount": "10",
               "description": "High-quality leather belt set.",
-              "image": "Images/Leather-Belt-Set.jpg",
+              "image": "/api/Images/Leather-Belt-Set.jpg",
               "rating": {
                   "average": 4.2,
                   "totalReviews": 100
@@ -344,7 +347,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1999,
               "discount": "20",
               "description": "Elegant cufflinks.",
-              "image": "Images/Cufflinks.jpg",
+              "image": "/api/Images/Cufflinks.jpg",
               "rating": {
                   "average": 4.4,
                   "totalReviews": 125
@@ -356,7 +359,7 @@ app.get('/api/category',(req,res) =>{
               "price": 4999,
               "discount": "18",
               "description": "Premium leather dress shoes, leather belt, cufflinks, bow.",
-              "image": "Images/Dress-Accessiories.jpg",
+              "image": "/api/Images/Dress-Accessiories.jpg",
               "rating": {
                   "average": 4.6,
                   "totalReviews": 155
@@ -375,7 +378,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1499,
               "discount": "12",
               "description": "Comfortable track pants.",
-              "image": "Images/Track-Pants.jpg",
+              "image": "/api/Images/Track-Pants.jpg",
                "rating": {
                   "average": 4.2,
                   "totalReviews": 105
@@ -387,7 +390,7 @@ app.get('/api/category',(req,res) =>{
               "price": 2499,
               "discount": "20",
               "description": "Lightweight sports jacket.",
-              "image": "Images/Sports-Jacket.jpg",
+              "image": "/api/Images/Sports-Jacket.jpg",
                "rating": {
                   "average": 4.0,
                   "totalReviews": 90
@@ -399,7 +402,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1999,
               "discount": "18",
               "description": "Breathable compression T-shirt.",
-              "image": "Images/Compression-T-shirt.jpg",
+              "image": "/api/Images/Compression-T-shirt.jpg",
                "rating": {
                   "average": 4.4,
                   "totalReviews": 120
@@ -411,7 +414,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1299,
               "discount": "15",
               "description": "Flexible running shorts.",
-              "image": "Images/Running-Shorts.jpg",
+              "image": "/api/Images/Running-Shorts.jpg",
                "rating": {
                   "average": 4.6,
                   "totalReviews": 150
@@ -423,7 +426,7 @@ app.get('/api/category',(req,res) =>{
               "price": 799,
               "discount": "10",
               "description": "Protective gym gloves.",
-              "image": "Images/Gym-Gloves.jpg",
+              "image": "/api/Images/Gym-Gloves.jpg",
                "rating": {
                   "average": 3.9,
                   "totalReviews": 80
@@ -435,7 +438,7 @@ app.get('/api/category',(req,res) =>{
               "price": 499,
               "discount": "5",
               "description": "Breathable sports socks.",
-              "image": "Images/Sports-Socks.jpg",
+              "image": "/api/Images/Sports-Socks.jpg",
               "rating": {
                   "average": 4.1,
                   "totalReviews": 95
@@ -447,7 +450,7 @@ app.get('/api/category',(req,res) =>{
               "price": 599,
               "discount": "8",
               "description": "Adjustable sports cap.",
-              "image": "Images/Sports-Cap.jpg",
+              "image": "/api/Images/Sports-Cap.jpg",
               "rating": {
                   "average": 4.3,
                   "totalReviews": 110
@@ -459,7 +462,7 @@ app.get('/api/category',(req,res) =>{
               "price": 1999,
               "discount": "20",
               "description": "Non-slip yoga mat.",
-              "image": "Images/Yoga-Mat.jpg",
+              "image": "/api/Images/Yoga-Mat.jpg",
               "rating": {
                   "average": 4.5,
                   "totalReviews": 135
@@ -478,7 +481,7 @@ app.get('/api/category',(req,res) =>{
             "price": 2999,
             "discount": "15",
             "description": "Adjustable dumbbell set for strength training.",
-            "image": "Images/Dumbbell-Set.jpg",
+            "image": "/api/Images/Dumbbell-Set.jpg",
             "rating": {
                 "average": 4.5,
                 "totalReviews": 170
@@ -490,7 +493,7 @@ app.get('/api/category',(req,res) =>{
             "price": 34999,
             "discount": "25",
             "description": "Foldable treadmill with digital display.",
-            "image": "Images/Treadmill.jpg",
+            "image": "/api/Images/Treadmill.jpg",
             "rating": {
                 "average": 4.8,
                 "totalReviews": 250
@@ -502,7 +505,7 @@ app.get('/api/category',(req,res) =>{
             "price": 999,
             "discount": "10",
             "description": "Set of resistance bands for workouts.",
-            "image": "Images/Resistance-Bands.jpg",
+            "image": "/api/Images/Resistance-Bands.jpg",
             "rating": {
                 "average": 4.2,
                 "totalReviews": 115
@@ -514,7 +517,7 @@ app.get('/api/category',(req,res) =>{
             "price": 2499,
             "discount": "20",
             "description": "Heavy-duty kettlebell for fitness.",
-            "image": "Images/Kettlebell.jpg",
+            "image": "/api/Images/Kettlebell.jpg",
             "rating": {
                 "average": 4.6,
                 "totalReviews": 180
@@ -526,7 +529,7 @@ app.get('/api/category',(req,res) =>{
             "price": 599,
             "discount": "12",
             "description": "High-speed skipping rope for cardio.",
-            "image": "Images/Skipping-Rope.jpg",
+            "image": "/api/Images/Skipping-Rope.jpg",
             "rating": {
                 "average": 4.0,
                 "totalReviews": 90
@@ -538,7 +541,7 @@ app.get('/api/category',(req,res) =>{
             "price": 1499,
             "discount": "18",
             "description": "Muscle recovery foam roller.",
-            "image": "Images/Foam-Roller.jpg",
+            "image": "/api/Images/Foam-Roller.jpg",
             "rating": {
                 "average": 4.3,
                 "totalReviews": 130
@@ -550,7 +553,7 @@ app.get('/api/category',(req,res) =>{
             "price": 2999,
             "discount": "22",
             "description": "Door-mounted pull-up bar for strength.",
-            "image": "Images/Pull-up-Bar.jpg",
+            "image": "/api/Images/Pull-up-Bar.jpg",
             "rating": {
                 "average": 4.7,
                 "totalReviews": 200
@@ -562,7 +565,7 @@ app.get('/api/category',(req,res) =>{
             "price": 4999,
             "discount": "30",
             "description": "Adjustable workout bench for exercises.",
-            "image": "Images/Workout-Bench.jpg",
+            "image": "/api/Images/Workout-Bench.jpg",
             "rating": {
                 "average": 4.9,
                 "totalReviews": 270
@@ -581,7 +584,7 @@ app.get('/api/category',(req,res) =>{
             "price": 6999,
             "discount": "15",
             "description": "Fitness smartwatch with heart rate monitor.",
-            "image": "Images/Smartwatch.jpg",
+            "image": "/api/Images/Smartwatch.jpg",
             "rating": {
                 "average": 4.6,
                 "totalReviews": 190
@@ -593,7 +596,7 @@ app.get('/api/category',(req,res) =>{
             "price": 3999,
             "discount": "20",
             "description": "Step and sleep tracking fitness band.",
-            "image": "Images/Fitness-Tracker.jpg",
+            "image": "/api/Images/Fitness-Tracker.jpg",
             "rating": {
                 "average": 4.3,
                 "totalReviews": 140
@@ -605,7 +608,7 @@ app.get('/api/category',(req,res) =>{
             "price": 4999,
             "discount": "18",
             "description": "Noise-canceling wireless earbuds.",
-            "image": "Images/Wireless-Earbuds.jpg",
+            "image": "/api/Images/Wireless-Earbuds.jpg",
             "rating": {
                 "average": 4.7,
                 "totalReviews": 210
@@ -617,7 +620,7 @@ app.get('/api/category',(req,res) =>{
             "price": 6999,
             "discount": "25",
             "description": "Over-ear Bluetooth headphones with mic.",
-            "image": "Images/Bluetooth-Headphones.jpg",
+            "image": "/api/Images/Bluetooth-Headphones.jpg",
             "rating": {
                 "average": 4.8,
                 "totalReviews": 230
@@ -629,7 +632,7 @@ app.get('/api/category',(req,res) =>{
             "price": 12999,
             "discount": "30",
             "description": "Virtual reality headset for immersive gaming.",
-            "image": "Images/VR-Headset.jpg",
+            "image": "/api/Images/VR-Headset.jpg",
             "rating": {
                 "average": 4.9,
                 "totalReviews": 280
@@ -641,7 +644,7 @@ app.get('/api/category',(req,res) =>{
             "price": 15999,
             "discount": "20",
             "description": "Augmented reality smart glasses.",
-            "image": "Images/Smart-Glasses.jpg",
+            "image": "/api/Images/Smart-Glasses.jpg",
             "rating": {
                 "average": 4.5,
                 "totalReviews": 175
@@ -653,7 +656,7 @@ app.get('/api/category',(req,res) =>{
             "price": 11999,
             "discount": "15",
             "description": "GPS-enabled smartwatch for outdoor activities.",
-            "image": "Images/GPS-Smartwatch.jpg",
+            "image": "/api/Images/GPS-Smartwatch.jpg",
             "rating": {
                 "average": 4.7,
                 "totalReviews": 220
@@ -665,7 +668,7 @@ app.get('/api/category',(req,res) =>{
             "price": 3499,
             "discount": "10",
             "description": "Wearable heart rate monitor for fitness.",
-            "image": "Images/Heart-Rate-Monitor.jpg",
+            "image": "/api/Images/Heart-Rate-Monitor.jpg",
             "rating": {
                 "average": 4.4,
                 "totalReviews": 150
@@ -684,7 +687,7 @@ app.get('/api/category',(req,res) =>{
           "price": 8999,
           "discount": "15",
           "description": "Digital microwave oven with convection.",
-          "image": "Images/Microwave-Oven.jpg",
+          "image": "/api/Images/Microwave-Oven.jpg",
           "rating": {
               "average": 4.3,
               "totalReviews": 160
@@ -696,7 +699,7 @@ app.get('/api/category',(req,res) =>{
           "price": 25999,
           "discount": "25",
           "description": "Double-door refrigerator with inverter technology.",
-          "image": "Images/Refrigerator.jpg",
+          "image": "/api/Images/Refrigerator.jpg",
           "rating": {
               "average": 4.6,
               "totalReviews": 220
@@ -708,7 +711,7 @@ app.get('/api/category',(req,res) =>{
           "price": 21999,
           "discount": "18",
           "description": "Front-load washing machine with AI wash.",
-          "image": "Images/Washing-Machine.jpg",
+          "image": "/api/Images/Washing-Machine.jpg",
           "rating": {
               "average": 4.5,
               "totalReviews": 200
@@ -720,7 +723,7 @@ app.get('/api/category',(req,res) =>{
           "price": 34999,
           "discount": "22",
           "description": "Split AC with auto-clean technology.",
-          "image": "Images/Air-Conditioner.jpg",
+          "image": "/api/Images/Air-Conditioner.jpg",
           "rating": {
               "average": 4.7,
               "totalReviews": 240
@@ -732,7 +735,7 @@ app.get('/api/category',(req,res) =>{
           "price": 7999,
           "discount": "20",
           "description": "High-power vacuum cleaner for deep cleaning.",
-          "image": "Images/Vacuum-Cleaner.jpg",
+          "image": "/api/Images/Vacuum-Cleaner.jpg",
           "rating": {
               "average": 4.2,
               "totalReviews": 150
@@ -744,7 +747,7 @@ app.get('/api/category',(req,res) =>{
           "price": 3999,
           "discount": "10",
           "description": "Portable induction cooktop with smart controls.",
-          "image": "Images/Induction-Cooktop.jpg",
+          "image": "/api/Images/Induction-Cooktop.jpg",
           "rating": {
               "average": 4.0,
               "totalReviews": 120
@@ -756,7 +759,7 @@ app.get('/api/category',(req,res) =>{
           "price": 15999,
           "discount": "18",
           "description": "RO+UV water purifier for pure drinking water.",
-          "image": "Images/Water-Purifier.jpg",
+          "image": "/api/Images/Water-Purifier.jpg",
           "rating": {
               "average": 4.4,
               "totalReviews": 180
@@ -768,7 +771,7 @@ app.get('/api/category',(req,res) =>{
           "price": 2499,
           "discount": "12",
           "description": "Automatic electric kettle with safety features.",
-          "image": "Images/Electric-Kettle.jpg",
+          "image": "/api/Images/Electric-Kettle.jpg",
           "rating": {
               "average": 4.1,
               "totalReviews": 130
@@ -787,7 +790,7 @@ app.get('/api/category',(req,res) =>{
           "price": 4999,
           "discount": "20",
           "description": "5-piece non-stick cookware set for easy cooking.",
-          "image": "Images/Non-Stick-Cookware-Set.jpg",
+          "image": "/api/Images/Non-Stick-Cookware-Set.jpg",
           "rating": {
               "average": 4.4,
               "totalReviews": 180
@@ -799,7 +802,7 @@ app.get('/api/category',(req,res) =>{
           "price": 3999,
           "discount": "15",
           "description": "Elegant 24-piece dinner set.",
-          "image": "Images/Dinner-Set.jpg",
+          "image": "/api/Images/Dinner-Set.jpg",
           "rating": {
               "average": 4.2,
               "totalReviews": 150
@@ -811,7 +814,7 @@ app.get('/api/category',(req,res) =>{
           "price": 2499,
           "discount": "10",
           "description": "Stainless steel pressure cooker.",
-          "image": "Images/Pressure-Cooker.jpg",
+          "image": "/api/Images/Pressure-Cooker.jpg",
           "rating": {
               "average": 4.0,
               "totalReviews": 120
@@ -823,7 +826,7 @@ app.get('/api/category',(req,res) =>{
           "price": 999,
           "discount": "12",
           "description": "Minimalist wall clock for home decor.",
-          "image": "Images/Wall-Clock.jpg",
+          "image": "/api/Images/Wall-Clock.jpg",
           "rating": {
               "average": 4.1,
               "totalReviews": 130
@@ -835,7 +838,7 @@ app.get('/api/category',(req,res) =>{
           "price": 1999,
           "discount": "25",
           "description": "Adjustable LED table lamp for study and work.",
-          "image": "Images/LED-Table-Lamp.jpg",
+          "image": "/api/Images/LED-Table-Lamp.jpg",
           "rating": {
               "average": 4.5,
               "totalReviews": 200
@@ -847,7 +850,7 @@ app.get('/api/category',(req,res) =>{
           "price": 1299,
           "discount": "18",
           "description": "Airtight storage containers for kitchen.",
-          "image": "Images/Storage-Containers.jpg",
+          "image": "/api/Images/Storage-Containers.jpg",
           "rating": {
               "average": 4.3,
               "totalReviews": 160
@@ -859,7 +862,7 @@ app.get('/api/category',(req,res) =>{
           "price": 2999,
           "discount": "22",
           "description": "Hand blender with multiple speed settings.",
-          "image": "Images/Hand-Blender.jpg",
+          "image": "/api/Images/Hand-Blender.jpg",
           "rating": {
               "average": 4.6,
               "totalReviews": 210
@@ -871,7 +874,7 @@ app.get('/api/category',(req,res) =>{
           "price": 999,
           "discount": "30",
           "description": "Aromatherapy scented candles for relaxation.",
-          "image": "Images/Scented-Candles.jpg",
+          "image": "/api/Images/Scented-Candles.jpg",
           "rating": {
               "average": 4.7,
               "totalReviews": 230
