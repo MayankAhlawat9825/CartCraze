@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "/api"; // Deployed backend URL
+const BASE_URL = "https://cart-craze-server.vercel.app/api"; // Deployed backend URL
 
 export const fetchData = async () => {
     try {

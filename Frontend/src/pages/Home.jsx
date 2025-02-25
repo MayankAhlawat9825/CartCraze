@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import bgimage from "../Image/Home-Background.jpg"
 import {nike , adidas , gucci , puma , underArmour,apple,hp,philips,samsung,zara} from "../Image"
 
-const BASE_IMAGE_URL = "/api"; // Replace with actual base URL
+const BASE_IMAGE_URL = "https://cart-craze-server.vercel.app/api"; // Replace with actual base URL
 
 function Home() {
     const [categories, setCategories] = useState([]);

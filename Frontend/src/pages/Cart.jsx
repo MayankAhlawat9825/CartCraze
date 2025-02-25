@@ -9,7 +9,7 @@ function Cart() {
     console.log(cartItemData);
     
     const dispatch = useDispatch();
-    const BASE_IMAGE_URL = "/api"; // Base image URL
+    const BASE_IMAGE_URL = "https://cart-craze-server.vercel.app/api"; // Base image URL
     const totalDiscountAmount = cartItemData.reduce(
         (acc, item) => acc + ((Number(item.price) * Number(item.discount)) / 100) * item.quantity,
         0

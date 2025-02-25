@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { handlePayment } from "../utlis/razorpayPayement";
 
-const BASE_IMAGE_URL = "/api"; // Replace with actual base URL
+const BASE_IMAGE_URL = "https://cart-craze-server.vercel.app/api"; // Replace with actual base URL
 
 function Item() {
     const { itemId, parentId } = useParams();
