@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BACKEND_URL = "http://localhost:3000"; // Replace with your deployed backend URL
+const BACKEND_URL = "https://cart-craze-server.vercel.app"; // Replace with your deployed backend URL
 
 export const loadRazorpayScript = () => {
     return new Promise((resolve) => {
