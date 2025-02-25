@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BASE_IMAGE_URL = "https://cart-craze-server.vercel.app/api"; // Replace with actual base URL
+const BASE_IMAGE_URL = "https://cart-craze-server.vercel.app"; // Replace with actual base URL
 
 function Product() {
     const { parentId } = useParams();

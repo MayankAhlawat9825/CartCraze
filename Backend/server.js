@@ -15,6 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Initialize Razorpay instance
+const Razorpay = require("razorpay");
 const razorpay = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET,
@@ -26,7 +27,7 @@ app.post('/api/create-order', async (req, res) => {
         const { amount, currency } = req.body;
 
         const options = {
-            amount: amount * 100, // Razorpay works with paise
+            amount: amount, // Razorpay works with paise
             currency: currency || 'INR',
             receipt: `receipt_${Date.now()}`,
         };
